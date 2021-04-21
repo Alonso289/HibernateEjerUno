@@ -8,22 +8,24 @@ import org.hibernate.criterion.DetachedCriteria;
 import org.hibernate.criterion.Restrictions;
 
 import FilesMapping.Departamento;
+import FilesMapping.Empleado;
 
 public class DepartamentoDAO {
-
-	public static void insertProviders(Session s, int numDepartamento) {
-		for (int id = 1; id <= numDepartamento; id++) {
-			insertEmpleado(s, id);
-		}
-	}
 	
-	public static void insertEmpleado(Session s, int codigo) {
-		
-		String nombre = "nombre "+codigo;
-		int codResponsable = 12;
-		
-		Departamento departamento = new Departamento(codigo, nombre, codResponsable);
-		s.save(departamento);
+	public static void insertDepartamento(Session s, Departamento departamento) {				
+		s.save(departamento);		
+	}
+	public static void updateDepartamento(Session s, Departamento departamentoActualizado) {				
+
+		Departamento departamento = s.get(Departamento.class, departamentoActualizado.getCodigo());
+		if (departamento != null) 
+			departamento = departamentoActualizado;
+						
+	}
+	public static void deleteDepartamento(Session s, int codigo) {	
+				
+		Departamento departamento = s.get(Departamento.class, codigo);		
+		s.delete("Departamento", departamento);
 	}
 
 	// hql queries
@@ -31,13 +33,13 @@ public class DepartamentoDAO {
 	// Native queries
 		
 	// Criteria queries
-	public static List<Departamento> getAllProviders(Session s) {
+	public static List<Departamento> getAllDepartamentos(Session s) {
 		DetachedCriteria criteria = DetachedCriteria.forClass(Departamento.class);
 		List<Departamento> result = criteria.getExecutableCriteria(s).list();
 		return result;
 	}
 	
-	public static Departamento getProvider(Session s, int codigo) {
+	public static Departamento getDepartamento(Session s, int codigo) {
 		// deprecado desde 5.2
 		Criteria criteria = s.createCriteria(Departamento.class);
 		Departamento result = (Departamento)criteria.add(Restrictions.eq("codigo", codigo))
