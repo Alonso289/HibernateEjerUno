@@ -50,3 +50,63 @@ org.hibernate.MappingException: Could not determine type for: String, at table: 
 [2021-04-22 18:12:00] [ ERROR] [SqlExceptionHelper:142] Unknown column 'departamen0_.CODRESPONSABLE' in 'field list'
 [2021-04-22 18:13:21] [ WARN ] [pooling:72] HHH10001002: Using Hibernate built-in connection pool (not for production use!)
 [2021-04-22 18:14:12] [ WARN ] [pooling:72] HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+[2021-04-22 18:48:55] [ ERROR] [HibernateUtil:30] HibernateUtil.buildSessionFactory(): Initial SessionFactory creation failed.
+org.hibernate.boot.MappingNotFoundException: Mapping (RESOURCE) not found : FilesMapping/Empleado.java : origin(FilesMapping/Empleado.java)
+	at org.hibernate.boot.spi.XmlMappingBinderAccess.bind(XmlMappingBinderAccess.java:56)
+	at org.hibernate.boot.MetadataSources.addResource(MetadataSources.java:311)
+	at org.hibernate.boot.cfgxml.spi.MappingReference.apply(MappingReference.java:70)
+	at org.hibernate.boot.internal.MetadataBuilderImpl.build(MetadataBuilderImpl.java:474)
+	at org.hibernate.boot.internal.MetadataBuilderImpl.build(MetadataBuilderImpl.java:85)
+	at principal.HibernateUtil.buildSessionFactory(HibernateUtil.java:25)
+	at principal.HibernateUtil.<clinit>(HibernateUtil.java:16)
+	at principal.HibernateMain.main(HibernateMain.java:28)
+[2021-04-22 18:50:47] [ ERROR] [HibernateUtil:30] HibernateUtil.buildSessionFactory(): Initial SessionFactory creation failed.
+org.hibernate.boot.MappingNotFoundException: Mapping (RESOURCE) not found : FilesMapping.Empleado.java : origin(FilesMapping.Empleado.java)
+	at org.hibernate.boot.spi.XmlMappingBinderAccess.bind(XmlMappingBinderAccess.java:56)
+	at org.hibernate.boot.MetadataSources.addResource(MetadataSources.java:311)
+	at org.hibernate.boot.cfgxml.spi.MappingReference.apply(MappingReference.java:70)
+	at org.hibernate.boot.internal.MetadataBuilderImpl.build(MetadataBuilderImpl.java:474)
+	at org.hibernate.boot.internal.MetadataBuilderImpl.build(MetadataBuilderImpl.java:85)
+	at principal.HibernateUtil.buildSessionFactory(HibernateUtil.java:25)
+	at principal.HibernateUtil.<clinit>(HibernateUtil.java:16)
+	at principal.HibernateMain.main(HibernateMain.java:28)
+[2021-04-22 18:51:13] [ ERROR] [HibernateUtil:30] HibernateUtil.buildSessionFactory(): Initial SessionFactory creation failed.
+org.hibernate.boot.MappingNotFoundException: Mapping (RESOURCE) not found : FilesMapping.Empleado : origin(FilesMapping.Empleado)
+	at org.hibernate.boot.spi.XmlMappingBinderAccess.bind(XmlMappingBinderAccess.java:56)
+	at org.hibernate.boot.MetadataSources.addResource(MetadataSources.java:311)
+	at org.hibernate.boot.cfgxml.spi.MappingReference.apply(MappingReference.java:70)
+	at org.hibernate.boot.internal.MetadataBuilderImpl.build(MetadataBuilderImpl.java:474)
+	at org.hibernate.boot.internal.MetadataBuilderImpl.build(MetadataBuilderImpl.java:85)
+	at principal.HibernateUtil.buildSessionFactory(HibernateUtil.java:25)
+	at principal.HibernateUtil.<clinit>(HibernateUtil.java:16)
+	at principal.HibernateMain.main(HibernateMain.java:28)
+[2021-04-22 18:52:19] [ WARN ] [pooling:72] HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+[2021-04-22 19:09:24] [ WARN ] [pooling:72] HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+[2021-04-22 19:10:01] [ WARN ] [deprecation:1792] HHH90000022: Hibernate's legacy org.hibernate.Criteria API is deprecated; use the JPA javax.persistence.criteria.CriteriaQuery instead
+[2021-04-22 19:11:28] [ WARN ] [pooling:72] HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+[2021-04-22 19:11:32] [ WARN ] [deprecation:1792] HHH90000022: Hibernate's legacy org.hibernate.Criteria API is deprecated; use the JPA javax.persistence.criteria.CriteriaQuery instead
+[2021-04-22 19:12:35] [ WARN ] [pooling:72] HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+[2021-04-22 19:12:40] [ WARN ] [deprecation:1792] HHH90000022: Hibernate's legacy org.hibernate.Criteria API is deprecated; use the JPA javax.persistence.criteria.CriteriaQuery instead
+[2021-04-22 19:13:41] [ WARN ] [pooling:72] HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+[2021-04-22 19:13:45] [ WARN ] [deprecation:1792] HHH90000022: Hibernate's legacy org.hibernate.Criteria API is deprecated; use the JPA javax.persistence.criteria.CriteriaQuery instead
+[2021-04-22 19:14:15] [ WARN ] [pooling:72] HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+[2021-04-22 19:14:22] [ WARN ] [deprecation:1792] HHH90000022: Hibernate's legacy org.hibernate.Criteria API is deprecated; use the JPA javax.persistence.criteria.CriteriaQuery instead
+[2021-04-22 19:14:43] [ WARN ] [pooling:72] HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+[2021-04-22 19:15:28] [ WARN ] [pooling:72] HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+[2021-04-22 19:15:31] [ WARN ] [deprecation:1792] HHH90000022: Hibernate's legacy org.hibernate.Criteria API is deprecated; use the JPA javax.persistence.criteria.CriteriaQuery instead
+[2021-04-22 19:16:11] [ WARN ] [pooling:72] HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+[2021-04-22 19:16:47] [ WARN ] [deprecation:1792] HHH90000022: Hibernate's legacy org.hibernate.Criteria API is deprecated; use the JPA javax.persistence.criteria.CriteriaQuery instead
+[2021-04-22 19:18:28] [ WARN ] [pooling:72] HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+[2021-04-22 19:18:32] [ WARN ] [deprecation:1792] HHH90000022: Hibernate's legacy org.hibernate.Criteria API is deprecated; use the JPA javax.persistence.criteria.CriteriaQuery instead
+[2021-04-22 19:19:06] [ WARN ] [pooling:72] HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+[2021-04-22 19:19:10] [ WARN ] [deprecation:1792] HHH90000022: Hibernate's legacy org.hibernate.Criteria API is deprecated; use the JPA javax.persistence.criteria.CriteriaQuery instead
+[2021-04-22 19:21:39] [ WARN ] [pooling:72] HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+[2021-04-22 19:21:45] [ WARN ] [deprecation:1792] HHH90000022: Hibernate's legacy org.hibernate.Criteria API is deprecated; use the JPA javax.persistence.criteria.CriteriaQuery instead
+[2021-04-22 19:25:15] [ WARN ] [pooling:72] HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+[2021-04-22 19:25:20] [ WARN ] [deprecation:1792] HHH90000022: Hibernate's legacy org.hibernate.Criteria API is deprecated; use the JPA javax.persistence.criteria.CriteriaQuery instead
+[2021-04-22 19:26:27] [ WARN ] [pooling:72] HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+[2021-04-22 19:26:31] [ WARN ] [deprecation:1792] HHH90000022: Hibernate's legacy org.hibernate.Criteria API is deprecated; use the JPA javax.persistence.criteria.CriteriaQuery instead
+[2021-04-22 19:27:06] [ WARN ] [pooling:72] HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+[2021-04-22 19:27:10] [ WARN ] [deprecation:1792] HHH90000022: Hibernate's legacy org.hibernate.Criteria API is deprecated; use the JPA javax.persistence.criteria.CriteriaQuery instead
+[2021-04-22 19:27:28] [ WARN ] [pooling:72] HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+[2021-04-22 19:27:33] [ WARN ] [deprecation:1792] HHH90000022: Hibernate's legacy org.hibernate.Criteria API is deprecated; use the JPA javax.persistence.criteria.CriteriaQuery instead

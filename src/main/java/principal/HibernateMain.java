@@ -1,5 +1,6 @@
 package principal;
 
+import java.util.List;
 import java.util.Scanner;
 
 import org.apache.log4j.LogManager;
@@ -8,8 +9,6 @@ import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
 
-
-import daoTablas.DepartamentoDAO;
 import daoTablas.EmpleadoDAO;
 import FilesMapping.Empleado;
 import FilesMapping.Departamento;
@@ -35,7 +34,7 @@ public class HibernateMain {
 			
 		//Operaciones de empleado
 			Empleado empleado = new Empleado();
-			//Inserta
+			//INSERTA
 			/*
 			System.out.println("Registrando empleado");
 			pideDatosEmpleado(empleado);			
@@ -43,7 +42,7 @@ public class HibernateMain {
 			logger.info("Empleado insertado");
 			*/
 			
-			//Actualiza
+			//ACTUALIZA
 			/*
 			System.out.println("Actualizando empleado");
 			pideDatosEmpleado(empleado);
@@ -51,17 +50,35 @@ public class HibernateMain {
 			logger.info("Empleado actualizado");
 			*/
 			
-			//Elimina
+			//ELIMINA
 			/*
 			System.out.println("Eliminando empleado");
 			int codigo = pideCodigo();
 			EmpleadoDAO.deleteEmpleado(session, codigo);
 			logger.info("Empleado eliminado");
 			*/
-		//Operaciones departamento
+			
+			//Muestra el listado de empleados
+			/*
+			System.out.println("Obteniendo lista de empleados");
+			System.out.println("Introduzca un codigo de departamento: ");
+			int idDepartamento = teclado.nextInt();
+			List<Empleado> empleados = EmpleadoDAO.getAllEmpleados(session, idDepartamento);
+			logger.info("Numero de empleados = "+ empleados.size());
+			empleados.stream().forEach(x -> logger.info(x.toString()));
+			*/
+			//Muestra los empleados mayores de una cierta edad
+			System.out.println("Obteniendo lista de empleados mayores a cierta edad");
+			System.out.println("Introduzca una edad: ");
+			int edad = teclado.nextInt();
+			List<Empleado> empleados = EmpleadoDAO.getAllEmpleadosMayores(session, edad);
+			logger.info("Numero de empleados mayores a "+ edad +"= "+ empleados.size());
+			empleados.stream().forEach(x -> logger.info(x.toString()));
+			
+		//OPERACIONES DEPARTAMENTO
 			Departamento departamento = new Departamento();
 			
-			 //Inserta
+			 //INSERTA
 			/*
 			System.out.println("Registrando departamento");
 			pideDatosDepartamento(departamento);			
@@ -69,14 +86,14 @@ public class HibernateMain {
 			logger.info("Departamento insertado");
 			*/
 			
-			//Actualiza
+			//ACTUALIZA
 			/*
 			System.out.println("Actualizando departamento");
 			pideDatosDepartamento(departamento);
 			DepartamentoDAO.updateDepartamento(session, departamento);
 			logger.info("Departamento actualizado");
 			*/
-			//Elimina
+			//ELIMINA
 			/*
 			System.out.println("Eliminando departamento");
 			codigo = pideCodigo();

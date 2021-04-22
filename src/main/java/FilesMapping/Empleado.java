@@ -129,7 +129,7 @@ public class Empleado implements java.io.Serializable {
 	}
 	
 	public String toString() {
-		return "Empleado [codigo=" + codigo + ", nombre=" + nombre + ", apellido1=" + apellido1;
+		return "Empleado [codigo=" + codigo + ", nombre=" + nombre + ", apellido1=" + apellido1+"]";
 	}
 
 }

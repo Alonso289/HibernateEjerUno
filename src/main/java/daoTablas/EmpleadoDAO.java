@@ -1,5 +1,6 @@
 package daoTablas;
 
+import java.util.Calendar;
 import java.util.List;
 
 import org.hibernate.Criteria;
@@ -42,17 +43,31 @@ public class EmpleadoDAO {
 		Empleado empleado = s.get(Empleado.class, codigo);		
 		s.delete(empleado);	
 	}
-	// hql queries
 
-	// Native queries
-		
-	// Criteria queries
-	public static List<Empleado> getAllEmpleados(Session s) {
-		DetachedCriteria criteria = DetachedCriteria.forClass(Empleado.class);
-		List<Empleado> result = criteria.getExecutableCriteria(s).list();
-		return result;
+	//OBTIENE LISTADO EMPLEADO
+	public static List<Empleado> getAllEmpleados(Session s, int idDepartamento) {
+		String hQuery = "from Empleado where cod_departamento ="+idDepartamento;
+		List<Empleado> empleadoList = s.createQuery(hQuery, Empleado.class)
+				   	   			           .list();
+		return empleadoList;
 	}
 	
+	//OBTIENE LISTADO EMPLEADO MAYORES DE UNA EDAD
+	public static List<Empleado> getAllEmpleadosMayores(Session s, int edad) {
+		
+		Criteria cr = s.createCriteria(Empleado.class);	
+		Calendar cal= Calendar.getInstance();
+		int ano = cal.get(Calendar.YEAR);		
+		int anoReal = (ano - edad); 
+		
+		String fecha =  "00/00/"+(anoReal-2000);
+		cr.add(Restrictions.le("fechaNacimiento", fecha));
+		List listaEmpleados = cr.list();
+		
+		return listaEmpleados;
+	}
+	
+	//OBTIENE UN EMPLEADO
 	public static Empleado getEmpleado(Session s, int codigo) {
 		// deprecado desde 5.2
 		Criteria criteria = s.createCriteria(Empleado.class);
@@ -60,5 +75,5 @@ public class EmpleadoDAO {
 											.setMaxResults(1)
 											.uniqueResult();		
 		return result;
-	}
+	}	
 }
