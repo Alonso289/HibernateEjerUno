@@ -27,7 +27,7 @@ public class EmpleadoDAO {
 	public static void deleteEmpleado(Session s, int codigo) {			
 		
 		Empleado empleado = s.get(Empleado.class, codigo);		
-		s.delete("Empleado", empleado);	
+		s.delete(empleado);	
 	}
 	// hql queries
 

@@ -25,7 +25,7 @@ public class DepartamentoDAO {
 	public static void deleteDepartamento(Session s, int codigo) {	
 				
 		Departamento departamento = s.get(Departamento.class, codigo);		
-		s.delete("Departamento", departamento);
+		s.delete(departamento);
 	}
 
 	// hql queries

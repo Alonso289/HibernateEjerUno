@@ -35,11 +35,12 @@ public class HibernateMain {
 			
 		//Operaciones de empleado
 			Empleado empleado = new Empleado();
-			//Inserta
+			/*//Inserta
 			System.out.println("Registrando empleado");
 			pideDatosEmpleado(empleado);			
 			EmpleadoDAO.insertEmpleado(session, empleado);
 			logger.info("Empleado insertado");
+			*/
 			
 			//Actualiza
 			System.out.println("Actualizando empleado");
@@ -48,19 +49,22 @@ public class HibernateMain {
 			logger.info("Empleado actualizado");
 			
 			//Elimina
+			/*
 			System.out.println("Eliminando empleado");
 			int codigo = pideCodigo();
 			EmpleadoDAO.deleteEmpleado(session, codigo);
 			logger.info("Empleado eliminado");
-			
+			*/
 		//Operaciones departamento
 			Departamento departamento = new Departamento();
-			//Inserta
+			/*
+			 //Inserta
 			System.out.println("Registrando departamento");
 			pideDatosDepartamento(departamento);			
 			DepartamentoDAO.insertDepartamento(session, departamento);
 			logger.info("Departamento insertado");
 			
+			*/
 			//Actualiza
 			System.out.println("Actualizando departamento");
 			pideDatosDepartamento(departamento);
@@ -68,16 +72,20 @@ public class HibernateMain {
 			logger.info("Departamento actualizado");
 			
 			//Elimina
-			System.out.println("Eliminando empleado");
+			/*
+			System.out.println("Eliminando departamento");
 			codigo = pideCodigo();
 			DepartamentoDAO.deleteDepartamento(session, codigo);
 			logger.info("Departamento eliminado");
+			*/
+			tx.commit();
+			session.close();
 			
 			//Crea una nueva session para comprobar los cambios
 			System.out.println("Comprobando cambios");
-			comprobacion(session);
+			//comprobacion(session);
 									
-			tx.commit();
+
 			System.out.println("Se ha cerrado la aplicacion");
 			
 		}finally {
