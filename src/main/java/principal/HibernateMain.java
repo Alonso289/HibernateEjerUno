@@ -35,18 +35,21 @@ public class HibernateMain {
 			
 		//Operaciones de empleado
 			Empleado empleado = new Empleado();
-			/*//Inserta
+			//Inserta
+			
 			System.out.println("Registrando empleado");
 			pideDatosEmpleado(empleado);			
 			EmpleadoDAO.insertEmpleado(session, empleado);
 			logger.info("Empleado insertado");
-			*/
+			
 			
 			//Actualiza
+			/*
 			System.out.println("Actualizando empleado");
 			pideDatosEmpleado(empleado);
 			EmpleadoDAO.updateEmpleado(session, empleado);
 			logger.info("Empleado actualizado");
+			*/
 			
 			//Elimina
 			/*
@@ -57,20 +60,22 @@ public class HibernateMain {
 			*/
 		//Operaciones departamento
 			Departamento departamento = new Departamento();
-			/*
+			
 			 //Inserta
+			/*
 			System.out.println("Registrando departamento");
 			pideDatosDepartamento(departamento);			
 			DepartamentoDAO.insertDepartamento(session, departamento);
 			logger.info("Departamento insertado");
-			
 			*/
+			
 			//Actualiza
+			/*
 			System.out.println("Actualizando departamento");
 			pideDatosDepartamento(departamento);
 			DepartamentoDAO.updateDepartamento(session, departamento);
 			logger.info("Departamento actualizado");
-			
+			*/
 			//Elimina
 			/*
 			System.out.println("Eliminando departamento");
@@ -82,8 +87,10 @@ public class HibernateMain {
 			session.close();
 			
 			//Crea una nueva session para comprobar los cambios
-			System.out.println("Comprobando cambios");
-			//comprobacion(session);
+			/*
+			 System.out.println("Comprobando cambios");
+			*/
+			comprobacion(session);
 									
 
 			System.out.println("Se ha cerrado la aplicacion");
@@ -117,7 +124,7 @@ public class HibernateMain {
 	private static void comprobacion(Session session) {
 		// Abrimos nueva sesion y recuperamos el empleado para comprobar que se ha actualizado
 		session = HibernateUtil.getSessionFactory().openSession();
-		System.out.print("Introduzca un id de empleado");
+		System.out.println("Introduzca un id de empleado");
 		
 		Empleado empleadoModificado = EmpleadoDAO.getEmpleado(session, teclado.nextInt());
 		logger.info(empleadoModificado.toString());

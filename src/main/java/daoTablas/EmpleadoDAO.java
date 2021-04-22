@@ -19,6 +19,16 @@ public class EmpleadoDAO {
 	public static void updateEmpleado(Session s, Empleado empleadoActualizado) {				
 
 		Empleado empleado = s.get(Empleado.class, empleadoActualizado.getCodigo());
+		empleado.setNombre(empleadoActualizado.getNombre());
+		empleado.setApellido1(empleadoActualizado.getApellido1());
+		empleado.setApellido2(empleadoActualizado.getApellido2());
+		empleado.setDireccion(empleadoActualizado.getDireccion());
+		empleado.setFechaNacimiento(empleadoActualizado.getFechaNacimiento());
+		empleado.setLugarNacimiento(empleadoActualizado.getLugarNacimiento());
+		empleado.setPuesto(empleadoActualizado.getPuesto());
+		empleado.setTelefono(empleadoActualizado.getTelefono());
+		empleado.setCodDepartamento(empleadoActualizado.getCodDepartamento());
+		
 		if (empleado != null) 
 			empleado = empleadoActualizado;
 					
