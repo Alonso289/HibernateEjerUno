@@ -36,12 +36,12 @@ public class HibernateMain {
 		//Operaciones de empleado
 			Empleado empleado = new Empleado();
 			//Inserta
-			
+			/*
 			System.out.println("Registrando empleado");
 			pideDatosEmpleado(empleado);			
 			EmpleadoDAO.insertEmpleado(session, empleado);
 			logger.info("Empleado insertado");
-			
+			*/
 			
 			//Actualiza
 			/*
@@ -90,7 +90,7 @@ public class HibernateMain {
 			/*
 			 System.out.println("Comprobando cambios");
 			*/
-			comprobacion(session);
+			//comprobacion(session);
 									
 
 			System.out.println("Se ha cerrado la aplicacion");
