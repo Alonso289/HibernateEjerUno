@@ -20,6 +20,8 @@ public class DepartamentoDAO {
 	public static void updateDepartamento(Session s, Departamento departamentoActualizado) {				
 
 		Departamento departamento = s.get(Departamento.class, departamentoActualizado.getCodigo());
+		departamento.setCodResponsable(departamentoActualizado.getCodResponsable());
+		departamento.setNombre(departamentoActualizado.getNombre());
 		if (departamento != null) 
 			departamento = departamentoActualizado;
 						
