@@ -12,10 +12,12 @@ import FilesMapping.Empleado;
 
 public class EmpleadoDAO {
 
+	//INSERTA UN EMPLEADO
 	public static void insertEmpleado(Session s, Empleado empleado) {				
 		s.save(empleado);		
 	}
 	
+	//ACTUALIZA UN EMPLEADO
 	public static void updateEmpleado(Session s, Empleado empleadoActualizado) {				
 
 		Empleado empleado = s.get(Empleado.class, empleadoActualizado.getCodigo());
@@ -34,6 +36,7 @@ public class EmpleadoDAO {
 					
 	}
 	
+	//ELIMINA UN EMPLEADO
 	public static void deleteEmpleado(Session s, int codigo) {			
 		
 		Empleado empleado = s.get(Empleado.class, codigo);		

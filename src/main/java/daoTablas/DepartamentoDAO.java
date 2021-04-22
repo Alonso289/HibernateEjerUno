@@ -12,9 +12,11 @@ import FilesMapping.Empleado;
 
 public class DepartamentoDAO {
 	
+	//INSERTA DEPARTAMENTO
 	public static void insertDepartamento(Session s, Departamento departamento) {				
 		s.save(departamento);		
 	}
+	//ACTUALIZA DEPARTAMENTO
 	public static void updateDepartamento(Session s, Departamento departamentoActualizado) {				
 
 		Departamento departamento = s.get(Departamento.class, departamentoActualizado.getCodigo());
@@ -22,6 +24,7 @@ public class DepartamentoDAO {
 			departamento = departamentoActualizado;
 						
 	}
+	//ELIMINA DEPARTAMENTO
 	public static void deleteDepartamento(Session s, int codigo) {	
 				
 		Departamento departamento = s.get(Departamento.class, codigo);		

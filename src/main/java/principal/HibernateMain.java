@@ -103,7 +103,9 @@ public class HibernateMain {
 		logger.info("Proceso finalizado");
 	}
 
+	//Obtiene los datos del departamento	
 	private static void pideDatosDepartamento(Departamento departamento) {
+		
 		System.out.println("Proceso de recopilacion de datos del departamento.");
 		System.out.println("Introduzca el codigo del departamento");
 		departamento.setCodigo(teclado.nextInt());
@@ -115,23 +117,25 @@ public class HibernateMain {
 		
 	}
 
+	//Obtiene un id
 	private static int pideCodigo() {
 		
 		System.out.print("Introduzca el id del elemento a borrar");
 		return teclado.nextInt();
 	}
 
+	//Obtiene un id de empleado y lo muestra 
 	private static void comprobacion(Session session) {
 		// Abrimos nueva sesion y recuperamos el empleado para comprobar que se ha actualizado
 		session = HibernateUtil.getSessionFactory().openSession();
 		System.out.println("Introduzca un id de empleado");
-		
 		Empleado empleadoModificado = EmpleadoDAO.getEmpleado(session, teclado.nextInt());
 		logger.info(empleadoModificado.toString());
-		
+		System.out.println(empleadoModificado.toString());
 		
 	}
 
+	//Obtiene los datos del empleado
 	private static void pideDatosEmpleado(Empleado empleado) {
 		System.out.println("Proceso de recopilacion de datos del empleado.");
 		System.out.println("Introduzca el codigo del empleado");
